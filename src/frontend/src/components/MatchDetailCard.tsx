@@ -25,7 +25,7 @@ export const MatchDetailCard = (props: MatchDetailCardProps) => {
     return <div className="MatchDetailCard">
         <h3>Latest Match</h3>
 
-        <h2>Vs: <Link to={"/teams/"+vsTeam}>{vsTeam}</Link></h2>
+        <h2>Vs: <Link to={"/team/"+vsTeam}>{vsTeam}</Link></h2>
         <h3>On: {props.matchData.date}</h3>
         <h4>Happened at: {props.matchData.venue} {props.matchData.city}</h4>
         <p>{props.matchData.matchWinner} won by {props.matchData.resultMargin} {props.matchData.resultBy}.

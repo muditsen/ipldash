@@ -23,6 +23,7 @@ export const TeamPage = (props: TeamPageProps) => {
     useEffect(() => {
 
         setLoading(true)
+
         fetch("/team/" + params?.teamName ?? "").then((res) => {
             return res.json()
         }).then((res) => {
@@ -32,7 +33,7 @@ export const TeamPage = (props: TeamPageProps) => {
         }).catch((err) => {
             setLoading(false)
         })
-    }, [params])
+    }, [params?.teamName])
 
     const matchesView = () => {
         const arr: any[] = []

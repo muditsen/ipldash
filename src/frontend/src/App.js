@@ -8,11 +8,11 @@ function App() {
     return (
         <Router>
             <Switch>
-                <Route path={"/teams/:teamName/matches/:year"}>
+                <Route path={"/team/:teamName/matches/:year"}>
                     <MatchPage/>
                 </Route>
 
-                <Route path={"/teams/:teamName"}>
+                <Route path={"/team/:teamName"}>
                     <TeamPage/>
                 </Route>
 
