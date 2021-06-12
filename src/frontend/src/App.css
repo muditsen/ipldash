@@ -1,0 +1,39 @@
+
+#root {
+    text-align: left;
+    padding: 32px;
+    margin: 0 auto;
+    width: 1024px;
+}
+
+.MatchDetailCard {
+    width: 1024px;
+    display: block;
+}
+
+body {
+    background: #535c68;
+    color: #ecf0f1;
+}
+
+.TeamPage {
+
+}
+
+p.oldMatches {
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.middle {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.MatchSmallCard {
+    float: left;
+    width: 330px;
+    display: block;
+}
