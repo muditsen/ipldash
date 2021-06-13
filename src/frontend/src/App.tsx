@@ -1,6 +1,6 @@
 import './App.scss';
 import {TeamPage} from "./page/TeamPage";
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {HashRouter as Router, Route, Switch} from "react-router-dom";
 import {MatchPage} from "./page/MatchPage";
 import {HomePage} from "./page/HomePage";
 
@@ -9,11 +9,11 @@ function App() {
     return (
         <Router>
             <Switch>
-                <Route path={"/team/:teamName/matches/:year"}>
+                <Route path={"/teams/:teamName/matches/:year"}>
                     <MatchPage/>
                 </Route>
 
-                <Route path={"/team/:teamName"}>
+                <Route path={"/teams/:teamName"}>
                     <TeamPage/>
                 </Route>
 

@@ -75,7 +75,7 @@ export const TeamPage = (props: TeamPageProps) => {
         <div className={"old-matches"}><h3> Old Matches</h3></div>
         {matchesView()}
         <div className={"div-next"}>
-            <Link to={"/team/" + params.teamName + "/matches/" + endYear}>More Matches &gt;</Link>
+            <Link to={"/teams/" + params.teamName + "/matches/" + endYear}>More Matches &gt;</Link>
         </div>
     </div>
 }

@@ -15,7 +15,7 @@ interface TeamInfo {
 
 export const TeamComponent = (props: TeamComponentProps) => {
     return <div className={"team-component"}>
-        <Link to={"/team/" + props.info.teamName}>
+        <Link to={"/teams/" + props.info.teamName}>
             <img src={"./img/team-logo/" + props.info.id + ".png"} alt={props.info.teamName} style={{
                 height: "120px"
             }}/>

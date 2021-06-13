@@ -31,7 +31,7 @@ export const MatchDetailCard = (props: MatchDetailCardProps) => {
     return <div className={isWinner ? "MatchDetailCard won-style" : "MatchDetailCard lost-style"}>
         <div>
             <h3 className={"latest-match"}>Latest Match</h3>
-            <span className={"vs"}>Vs: </span> <h2><Link to={"/team/" + vsTeam}>{vsTeam}</Link></h2>
+            <span className={"vs"}>Vs: </span> <h2><Link to={"/teams/" + vsTeam}>{vsTeam}</Link></h2>
             <span>On: </span><h2 className={"match-date"}>{props.matchData.date}</h2>
             <span>Happened at: </span><h3 className={"match-venue"}>{props.matchData.venue} {props.matchData.city}</h3>
             <span>{isWinner ? "won" : "lost"} by: </span><h3

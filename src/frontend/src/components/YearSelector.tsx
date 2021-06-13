@@ -19,11 +19,11 @@ export const YearSelector = (props: YearSelectorProps) => {
     for (let i: number = endYear; i >= (startYear); i--) {
         if (parseInt(props.paramYear + "") === i) {
             years.push(<li className={"year-name selected"} key={i}>
-                <Link to={"/team/" + props.teamName + "/matches/" + i}>{i}</Link>
+                <Link to={"/teams/" + props.teamName + "/matches/" + i}>{i}</Link>
             </li>)
         } else {
             years.push(<li className={"year-name"} key={i}>
-                <Link to={"/team/" + props.teamName + "/matches/" + i}>{i}</Link>
+                <Link to={"/teams/" + props.teamName + "/matches/" + i}>{i}</Link>
             </li>)
         }
 

@@ -26,7 +26,7 @@ export const MatchSmallCard = (props: MatchSmallCardProps) => {
     let isWinner = props.teamName === props.matchData.matchWinner
 
     return <div className={isWinner ? "MatchSmallCard won-style" : "MatchSmallCard lost-style"}>
-        {<p><b>Vs: <Link to={"/team/"+vsTeam}>{vsTeam}</Link></b></p>}
+        {<p><b>Vs: <Link to={"/teams/"+vsTeam}>{vsTeam}</Link></b></p>}
         <p>{props.matchData.matchWinner} won by {props.matchData.resultMargin} {props.matchData.resultBy}.
         </p>
     </div>
