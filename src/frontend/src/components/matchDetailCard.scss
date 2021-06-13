@@ -1,0 +1,51 @@
+.MatchDetailCard {
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem 1rem;
+  box-shadow: #222222 1px 1px 10px;
+  border-radius: 0.2rem;
+
+  .match-date {
+    margin-top: 2px;
+  }
+
+  h3.latest-match {
+    margin-bottom: 1rem;
+  }
+
+  .match-venue {
+    margin-top: 2px;
+  }
+
+  span {
+    display: block;
+    margin-top: 10px;
+  }
+
+  #spn-and {
+    display: block;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .match-result {
+    margin-top: 2px;
+  }
+
+  .innings {
+    justify-self: right;
+    margin-right: 20px;
+  }
+
+  .h1-innings {
+    margin-top: 2px;
+  }
+
+  .p-innings {
+    margin-top: 1rem;
+  }
+}

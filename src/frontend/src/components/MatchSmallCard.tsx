@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from "react-router-dom";
 
+import './matchSmallCard.scss'
 
 interface MatchSmallCardProps {
     matchData: MatchData
@@ -22,8 +23,10 @@ export const MatchSmallCard = (props: MatchSmallCardProps) => {
 
     let vsTeam = props.teamName === props.matchData.team1 ? props.matchData.team2 : props.matchData.team1
 
-    return <div className="MatchSmallCard">
-        {<p><b>Vs: <Link to={"/teams/"+vsTeam}>{vsTeam}</Link></b></p>}
+    let isWinner = props.teamName === props.matchData.matchWinner
+
+    return <div className={isWinner ? "MatchSmallCard won-style" : "MatchSmallCard lost-style"}>
+        {<p><b>Vs: <Link to={"/team/"+vsTeam}>{vsTeam}</Link></b></p>}
         <p>{props.matchData.matchWinner} won by {props.matchData.resultMargin} {props.matchData.resultBy}.
         </p>
     </div>
