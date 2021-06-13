@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from 'react'
 import {MatchDetailCard} from "../components/MatchDetailCard";
 import {MatchSmallCard} from "../components/MatchSmallCard";
 import './teamPage.scss'
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import {PieChart} from 'react-minimal-pie-chart';
 
 interface TeamPageProps {
@@ -20,6 +20,9 @@ export const TeamPage = (props: TeamPageProps) => {
     const params = useParams() as Params
 
     const responseRef = useRef<null | any>()
+
+    const endYear: number = parseInt(process.env.REACT_APP_DATA_END_YEAR ?? "0")
+
 
     useEffect(() => {
 
@@ -62,7 +65,7 @@ export const TeamPage = (props: TeamPageProps) => {
         <div className={"wins-loss"}>
             <p style={{
                 textAlign: "center",
-                fontWeight:500,
+                fontWeight: 500,
             }}>Wins/Losses</p>
             <PieChart data={data} className={"pie-chart"}/>
         </div>
@@ -72,7 +75,7 @@ export const TeamPage = (props: TeamPageProps) => {
         <div className={"old-matches"}><h3> Old Matches</h3></div>
         {matchesView()}
         <div className={"div-next"}>
-            More Matches &gt;
+            <Link to={"/team/" + params.teamName + "/matches/" + endYear}>More Matches &gt;</Link>
         </div>
     </div>
 }

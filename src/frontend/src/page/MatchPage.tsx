@@ -3,6 +3,9 @@ import {useParams} from "react-router-dom";
 import {ApiState} from "../common-types/types";
 import {MatchDetailCard} from "../components/MatchDetailCard";
 
+import './matchPage.scss'
+import {YearSelector} from "../components/YearSelector";
+
 interface MatchPageProps {
 
 }
@@ -35,29 +38,35 @@ export const MatchPage = (props: MatchPageProps) => {
         })
     }, [params])
 
+    const matchesView = () => {
+        const arr: any[] = []
+        if (apiState.response) {
+            for (let i = 1; i < apiState.response.data.length; i++) {
+                arr.push(<div className={"space"}/>)
+                arr.push(<MatchDetailCard matchData={apiState.response.data[i]} teamName={params.teamName ?? ""}
+                                          key={i + ""}/>)
+            }
+        }
+        return arr
+    }
+
     if (apiState.loading) {
-        return (<div className="App">
+        return (<div className="MatchPage">
             <h1>Loading...</h1>
         </div>)
     } else if (apiState.response) {
 
-        const matchesView = () => {
-            const arr: any[] = []
-            if (apiState.response) {
-                for (let i = 1; i < apiState.response.data.length; i++) {
-                    arr.push(<MatchDetailCard matchData={apiState.response.data[i]} teamName={params.teamName??""}
-                                             key={i + ""}/>)
-                }
-            }
-            return arr
-        }
-
-        return (<div className="App">
-            <h1>{params.teamName} Matches of year {params.year}</h1>
-            {matchesView()}
+        return (<div className="MatchPage">
+            <div className={"year-selector"}>
+                <YearSelector teamName={params.teamName} paramYear={params.year}/>
+            </div>
+            <div>
+                <h1>{params.teamName} Matches of year {params.year}</h1>
+                {matchesView()}
+            </div>
         </div>)
     } else {
-        return (<div className="App">
+        return (<div className="MatchPage">
             <h1>Match Page</h1>
             <pre>{JSON.stringify(apiState.error)}</pre>
         </div>)

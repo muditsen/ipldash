@@ -121,7 +121,7 @@ class BatchConfig {
                         ?.resultList?.stream()?.forEach {
                             it as Array<*>
                             val team = map[it[0]]
-                            team?.totalMatches = it[1].toString().toLong() + (team?.totalWins ?: 0L)
+                            team?.totalMatches = (team?.totalMatches?:0) + it[1].toString().toLong()
                         }
 
                 entityManager?.createQuery("select m.matchWinner, count(m) from Match m group by m.matchWinner", Array<Any>::class.java)

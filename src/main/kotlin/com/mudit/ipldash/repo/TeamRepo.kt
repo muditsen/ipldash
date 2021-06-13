@@ -7,4 +7,6 @@ interface TeamRepo : CrudRepository<Team, Long> {
 
     fun findByTeamName(teamName: String): Team
 
+    fun findAllByOrderByTotalWinsDesc(): List<Team>
+
 }

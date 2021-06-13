@@ -1,0 +1,41 @@
+.year-container {
+  color: white;
+  background: #576574;
+  box-shadow: #222222 1px 1px 10px;
+  border-radius: 0.2rem;
+  padding: 1rem 4rem;
+  margin-top: 40px;
+  position: fixed;
+  top: 78px;
+  left: 170px;
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  li a {
+    color: #c8d6e5
+  }
+
+  h3 {
+    width: 105px;
+    text-align: center;
+  }
+
+  li.selected {
+    font-weight: 700;
+    color: white;
+    font-size: 20px;
+  }
+
+  li.selected a{
+    color: white;
+  }
+}

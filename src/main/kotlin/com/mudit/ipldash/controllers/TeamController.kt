@@ -1,5 +1,6 @@
 package com.mudit.ipldash.controllers
 
+import com.mudit.ipldash.model.Response
 import com.mudit.ipldash.model.Team
 import com.mudit.ipldash.repo.MatchRepo
 import com.mudit.ipldash.repo.TeamRepo
@@ -23,7 +24,16 @@ class TeamController {
     @GetMapping("/team/{teamName}")
     fun getTeam(@PathVariable teamName: String): Team {
         val team = teamRepo.findByTeamName(teamName)
-        team.matches = matchRepo.getByTeam1OrTeam2OrderByDateDesc(teamName, teamName, PageRequest.of(0, 5))
+        team.matches = matchRepo.getByTeam1OrTeam2OrderByDateDesc(teamName, teamName, PageRequest.of(0, 4))
         return team
+    }
+
+    @GetMapping("/teams")
+    fun getAllTeams(): Response<List<Team>> {
+        val response = Response<List<Team>>()
+        response.data = teamRepo.findAllByOrderByTotalWinsDesc()
+        response.status = "success"
+        response.isError = false
+        return response
     }
 }

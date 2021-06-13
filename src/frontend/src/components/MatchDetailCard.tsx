@@ -24,8 +24,6 @@ interface MatchData {
 
 export const MatchDetailCard = (props: MatchDetailCardProps) => {
 
-    console.log(JSON.stringify(props))
-
     let isWinner = props.teamName === props.matchData.matchWinner
 
     let vsTeam = props.teamName === props.matchData.team1 ? props.matchData.team2 : props.matchData.team1

@@ -1,11 +1,10 @@
 .MatchDetailCard {
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 2rem 1rem;
   box-shadow: #222222 1px 1px 10px;
   border-radius: 0.2rem;
-
+  margin-top: 1rem;
   .match-date {
     margin-top: 2px;
   }
@@ -38,6 +37,7 @@
 
   .innings {
     justify-self: right;
+    text-align: right;
     margin-right: 20px;
   }
 
